@@ -1,7 +1,11 @@
 package com.jcsanchez.helloworld;
 
-/**
- * Created by jsssn on 18-Jun-17.
- */
-public class Main {
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+
+public class Main implements RequestHandler<String, String>{
+    @Override
+    public String handleRequest(String s, Context context) {
+        return "Response: " + s;
+    }
 }
